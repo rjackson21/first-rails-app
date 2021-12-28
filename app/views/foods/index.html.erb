@@ -1,4 +1,4 @@
-<h1> This is foods </h1>
+<h4> Enter a food to see if it is vegan: </h4>
 <%= form_tag url: "/foods", method: :post do |form| %>
   <%= text_field_tag :ingredient %>
   <%= submit_tag "Submit" %>
@@ -13,14 +13,27 @@
   <%end %>
 </p>
 
+<h4>Foods: </h4>
 
-
-<h4> Current Foods: </h4>
-<ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Food</th>
+      <th scope="col">Vegan</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @foods.each do |food| %>
-  <li><%= food.name %></li>
-  <% end %>
-</ul>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= food.name %></td>
+      <td><%= food.is_vegan %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 
 
