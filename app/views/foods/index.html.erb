@@ -4,9 +4,24 @@
   <%= submit_tag "Submit" %>
 <% end %> 
 
+<p> You Entered: <%= @food.name%> </p>
+<p> Vegan: 
+  <% if @food.is_vegan == true %>
+    <%= p "Yes!" %>   
+  <% else %>  
+    <%= p "Nope!" %>     
+  <%end %>
+</p>
+
+
+
+<h4> Current Foods: </h4>
 <ul>
   <% @foods.each do |food| %>
-    <li><%= food.name %></li>
-    <li><%= food.is_vegan %></li>
+  <li><%= food.name %></li>
   <% end %>
 </ul>
+
+
+
+
