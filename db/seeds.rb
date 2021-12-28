@@ -7,8 +7,5 @@
 Food.destroy_all
 
 Food.create(name: 'potato', is_vegan: true)
-Food.create(name: 'tofu', is_vegan: true)
-Food.create(name: 'rice', is_vegan: true)
-Food.create(name: 'celery', is_vegan: true)
-Food.create(name: 'corn', is_vegan: true)
+
 
