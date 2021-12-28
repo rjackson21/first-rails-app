@@ -1,11 +1,11 @@
 <h1> This is foods </h1>
-<form method="POST" action="/" class="form">
-    <input type="text" name="ingredient" />
-    <button type="submit">Submit</button>
-</form>
+<%= form_tag url: "/foods", method: :post do |form| %>
+  <%= text_field_tag :ingredient %>
+  <%= submit_tag "Submit" %>
+<% end %> 
 
 <ul>
   <% @foods.each do |food| %>
-    <li><%= food.name %></li>
+    <li><%= food.name %><%= food.is_vegan %></li>
   <% end %>
 </ul>

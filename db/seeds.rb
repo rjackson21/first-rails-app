@@ -6,7 +6,7 @@
 #movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 Food.destroy_all
 
-Food.create(name: 'potato', calories: 45)
+Food.create(name: 'potato', calories: 45, is_vegan: true)
 Food.create(name: 'tofu', calories: 90)
 Food.create(name: 'rice', calories: 70)
 Food.create(name: 'celery', calories: 10)
