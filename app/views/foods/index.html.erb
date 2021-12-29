@@ -25,9 +25,8 @@
   <tbody>
   <% @foods.each do |food| %>
     <tr>
-      <th scope="row">1</th>
-      <td><%= food.name %></td>
-      <td><%= food.is_vegan %></td>
+      <td><%= food.name.capitalize %></td>
+      <td><%= food.is_vegan.to_s.capitalize %></td>
     </tr>
     <% end %>
   </tbody>
