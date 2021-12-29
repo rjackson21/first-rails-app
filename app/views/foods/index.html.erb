@@ -1,7 +1,7 @@
 <h4> Enter a food to see if it is vegan: </h4>
 <%= form_tag url: "/foods", method: :post do |form| %>
-  <%= text_field_tag :ingredient %>
-  <%= submit_tag "Submit" %>
+  <%= text_field_tag :ingredient, nil, class: "form-control", placeholder: "Soy"%>
+  <%= submit_tag "Submit", class:"btn btn-primary" %>
 <% end %> 
 
 <p> You Entered: <%= @food.name%> </p>
