@@ -4,14 +4,14 @@
   <%= submit_tag "Submit", class:"btn btn-primary" %>
 <% end %> 
 
+<% if Food.all.count > 0 %>
 <p> You Entered: <%= @food.name%> </p>
 <p> Vegan: 
-  <% if @food.is_vegan == true %>
-    <%= p "Yes!" %>   
-  <% else %>  
-    <%= p "Nope!" %>     
-  <%end %>
+  <%= @food.is_vegan ? "Yes!" : "Nope" %>
 </p>
+<% else %>
+<p> Enter a food! </p>
+<%end %>
 
 <h4>Foods: </h4>
 

@@ -4,8 +4,8 @@
 # Examples:
 #
 #movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-Food.destroy_all
+#Food.destroy_all
 
-Food.create(name: 'potato', is_vegan: true)
+#Food.create(name: 'potato', is_vegan: true)
 
 
