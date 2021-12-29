@@ -5,9 +5,9 @@
 <% end %> 
 
 <% if Food.all.count > 0 %>
-<p> You Entered: <%= @food.name%> </p>
+<p> You Entered: <%= @food.name.capitalize%> </p>
 <p> Vegan: 
-  <%= @food.is_vegan ? "Yes!" : "Nope" %>
+  <%= @food.is_vegan ? "Yes!" : "Nope!" %>
 </p>
 <% else %>
 <p> Enter a food! </p>
