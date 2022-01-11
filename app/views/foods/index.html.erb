@@ -27,6 +27,7 @@
     <tr>
       <td><%= food.name.capitalize %></td>
       <td><%= food.is_vegan.to_s.capitalize %></td>
+      <td><%= link_to 'Show', food_path(@food)%></td>
     </tr>
     <% end %>
   </tbody>
