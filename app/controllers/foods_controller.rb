@@ -11,4 +11,9 @@ class FoodsController < ApplicationController
       Food.create(name: parsed_response["checkedIngredient"], is_vegan: parsed_response["isVeganSafe"])
       redirect_to :back
     end
+
+    def show
+      @food = Food.find(params[:id])
+    end
+
   end
