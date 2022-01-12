@@ -20,4 +20,8 @@ class FoodsController < ApplicationController
       @food = Food.find(params[:id])
       render :edit
     end
+
+    def update
+      redirect_to :food
+    end
   end
