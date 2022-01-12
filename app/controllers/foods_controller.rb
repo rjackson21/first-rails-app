@@ -16,4 +16,8 @@ class FoodsController < ApplicationController
       @food = Food.find(params[:id])
     end
 
+    def edit
+      @food = Food.find(params[:id])
+      render :edit
+    end
   end
