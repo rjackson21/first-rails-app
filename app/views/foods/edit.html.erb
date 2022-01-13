@@ -3,8 +3,14 @@
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
 <%= form_for @food do |f| %>
+    <%= f.label :name %>   
     <%= text_field_tag :name %>
+    
+    <%= f.label :calories %>   
     <%= text_field_tag :calories %>
+    
+    <%= f.label :is_vegan %>   
     <%= text_field_tag :is_vegan %>
+    
     <%= submit_tag("Update") %>
 <% end %>
