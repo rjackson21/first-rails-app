@@ -22,6 +22,13 @@ class FoodsController < ApplicationController
     end
 
     def update
-      redirect_to :food
+      @food = Food.find(params[:id])
+      if @food.update(params.permit(:food).permit(:name, :calories, :is_vegan))
+        flash[:success] = "Food item successfully updated!"
+        redirect_to food_url(@food)
+      else
+        flash.now[:error] = "Food item update failed"
+        render :edit
+      end
     end
   end
