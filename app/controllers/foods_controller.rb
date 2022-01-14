@@ -5,7 +5,7 @@ class FoodsController < ApplicationController
       @food = Food.last
     end
 
-    def create
+    def create #this is where the program requests info from the api
       @response = HTTParty.get("https://is-vegan.netlify.app/.netlify/functions/api?ingredients=#{params[:ingredient]}")
       parsed_response = JSON.parse(@response.parsed_response)
       Food.create(name: parsed_response["checkedIngredient"], is_vegan: parsed_response["isVeganSafe"])
@@ -18,17 +18,24 @@ class FoodsController < ApplicationController
 
     def edit
       @food = Food.find(params[:id])
+      #instance variable, being passed to the view
       render :edit
     end
 
     def update
-      @food = Food.find(params[:id])
-      if @food.update(params.permit(:food).permit(:name, :calories, :is_vegan))
-        flash[:success] = "Food item successfully updated!"
-        redirect_to food_url(@food)
-      else
-        flash.now[:error] = "Food item update failed"
-        render :edit
-      end
+      food = Food.find(params[:id])
+      #this is a local variable because there is no "update" view,
+      #we are not using this food variable outside of this method
+      food.update(food_params)
+  
+      flash[:notice] = "You've successfully edited #{food.name}"
+  
+      redirect_to root_path
+    end
+  
+    private
+  
+    def food_params
+      params.require(:food).permit(:name, :calories, :is_vegan)
     end
   end

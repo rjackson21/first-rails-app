@@ -4,13 +4,13 @@
 
 <%= form_for @food do |f| %>
     <%= f.label :name %>   
-    <%= text_field_tag :name %>
+    <%= f.text_field :name %>
     
     <%= f.label :calories %>   
-    <%= text_field_tag :calories %>
+    <%= f.number_field :calories %>
     
     <%= f.label :is_vegan %>   
-    <%= text_field_tag :is_vegan %>
+    <%= f.text_field :is_vegan %>
     
-    <%= submit_tag("Update") %>
+    <%= f.submit %>
 <% end %>
