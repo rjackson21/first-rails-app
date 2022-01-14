@@ -11,6 +11,7 @@
   <thead>
     <tr>
       <th scope="col">Food</th>
+      <th scope= "col">Calories</th>
       <th scope="col">Vegan</th>
       <th scope="col">Options</th>
     </tr>
@@ -18,8 +19,9 @@
   <tbody>
   <% @foods.each do |food| %>
     <tr>
-      <td><%= food.name %></td>
-      <td><%= food.is_vegan.to_s %></td>
+      <td><%= food.name.capitalize %></td>
+      <td><%= food.calories %></td>
+      <td><%= food.is_vegan.to_s.capitalize %></td>
       <td><%= link_to 'Show', food_path(food.id)%>
       <%= link_to 'Edit', edit_food_path(food.id)%>
       <%= link_to 'Delete', food_path(food.id), method: :delete, remote: true %></td>
