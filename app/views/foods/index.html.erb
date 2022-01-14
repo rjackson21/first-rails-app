@@ -4,14 +4,6 @@
   <%= submit_tag "Submit", class:"btn btn-primary" %>
 <% end %> 
 
-<% if Food.all.count > 0 %>
-<p> You Entered: <%= @food.name.capitalize%> </p>
-<p> Vegan: 
-  <%= @food.is_vegan ? "Yes!" : "Nope!" %>
-</p>
-<% else %>
-<p> Enter a food! </p>
-<%end %>
 
 <h4>Foods: </h4>
 
@@ -28,8 +20,8 @@
     <tr>
       <td><%= food.name.capitalize %></td>
       <td><%= food.is_vegan.to_s.capitalize %></td>
-      <td><%= link_to 'Show', food_path(@food)%>
-      <td><%= link_to 'Edit', edit_food_path(@food)%></td>
+      <td><%= link_to 'Show', food_path(food.id)%>
+      <%= link_to 'Edit', edit_food_path(food.id)%></td>
     </tr>
     <% end %>
   </tbody>
