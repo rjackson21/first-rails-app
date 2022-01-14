@@ -18,12 +18,13 @@
   <tbody>
   <% @foods.each do |food| %>
     <tr>
-      <td><%= food.name.capitalize %></td>
-      <td><%= food.is_vegan.to_s.capitalize %></td>
+      <td><%= food.name %></td>
+      <td><%= food.is_vegan.to_s %></td>
       <td><%= link_to 'Show', food_path(food.id)%>
-      <%= link_to 'Edit', edit_food_path(food.id)%></td>
+      <%= link_to 'Edit', edit_food_path(food.id)%>
+      <%= link_to 'Delete', food_path(food.id), method: :delete, remote: true %></td>
     </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

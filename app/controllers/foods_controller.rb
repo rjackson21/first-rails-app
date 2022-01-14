@@ -32,7 +32,14 @@ class FoodsController < ApplicationController
   
     redirect_to root_path
   end
-  
+
+  def destroy
+    food = Food.find(params[:id])
+    #again going with local variable for same reason above
+    food.destroy
+    flash[:notice] = "You've deleted #{food.name}"
+    redirect_to root_path
+  end  
   private
   
   def food_params
