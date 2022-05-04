@@ -1,17 +1,19 @@
-<h4> Enter a food to see if it is vegan: </h4>
+
+<div class = "p-5 bg-light">
+<p> Questioning if an ingredient is vegan? </p>
 <%= form_tag url: "/foods", method: :post do |form| %>
   <%= text_field_tag :ingredient, nil, class: "form-control", placeholder: "Soy", autofocus: true%>
-  <%= submit_tag "Submit", class:"btn btn-primary" %>
+  <%= submit_tag "Enter", class:"btn btn-primary" %>
 <% end %> 
+</div>
 
 
-<h4>Foods: </h4>
+
 
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Food</th>
-      <th scope= "col">Calories</th>
       <th scope="col">Vegan</th>
       <th scope="col">Options</th>
     </tr>
@@ -20,7 +22,6 @@
   <% @foods.each do |food| %>
     <tr>
       <td><%= food.name.capitalize %></td>
-      <td><%= food.calories %></td>
       <td><%= food.is_vegan.to_s.capitalize %></td>
       <td><%= link_to 'Show', food_path(food.id)%>
       <%= link_to 'Edit', edit_food_path(food.id)%>

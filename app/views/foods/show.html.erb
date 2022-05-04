@@ -1,10 +1,5 @@
 <h1>This is <%=@food.name%></h1>
 
-<% if @food.calories == nil%>
-    <p> There is no calorie data for <%=@food.name %></p>
-    <p> Would you like to enter calorie data? </p>
-<% else %> 
-    <p> Calories: <%= @food.calories %> </p>
-<% end %>
+
 
 <p> Vegan: <%=@food.is_vegan%> </p>
