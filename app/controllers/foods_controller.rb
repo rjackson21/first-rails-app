@@ -38,8 +38,8 @@ def index
     food = Food.find(params[:id])
     #again going with local variable for same reason above
     food.destroy
-    flash[:notice] = "You've deleted #{food.name}"
-    redirect_to root_path
+ 
+    redirect_to root_path, notice: "You've deleted #{food.name}"
   end  
   private
   
