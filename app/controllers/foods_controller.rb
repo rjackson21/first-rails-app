@@ -1,6 +1,7 @@
 
 class FoodsController < ApplicationController
-  def index
+
+def index
     @foods = Food.all
     @food = Food.last
   end
