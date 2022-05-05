@@ -1,6 +1,9 @@
 
-<div class = "p-5 bg-light">
+<div class= "p-5 bg-light">
+
 <p> Questioning if an ingredient is vegan? </p>
+
+<div class="input-group mb-3">
 <%= form_tag url: "/foods", method: :post do |form| %>
   <%= text_field_tag :ingredient, nil, class: "form-control", placeholder: "Soy", autofocus: true%>
   <%= submit_tag "Enter", class:"btn btn-primary" %>
@@ -9,7 +12,7 @@
 
 
 
-
+<% if @food != nil %>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -30,6 +33,9 @@
   <% end %>
   </tbody>
 </table>
+<% else %>
+
+<% end %>
 
 
 
