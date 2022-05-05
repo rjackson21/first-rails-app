@@ -1,9 +1,9 @@
 
 <div class= "p-5 bg-light" style="text-align:center;">
 
-<p> Questioning if an ingredient is vegan? </p>
+<h3> Is it Vegan? </h3>
 
-<div>
+<div class="p-2">
 <%= form_tag url: "/foods", method: :post do |form| %>
   <%= text_field_tag :ingredient, nil, class: "form-control", placeholder: "Soy", autofocus: true%>
   <%= submit_tag "Enter", class:"btn btn-primary" %>
@@ -39,7 +39,7 @@
 <% end %>
 <div class= "p-3 bg-light">
 <p style="text-align:center;"> "Is it Vegan" helps you identify if an ingredient is vegan on the fly. Beyond the obvious ingredients that are not vegan, foods often include unfamiliar 
-ingredients that are questionable to those who are following a vegan diet. Please use at your own risk. The API 
+ingredients that are questionable to those following a vegan diet. Please use at your own risk. The API is most accurate for individual ingredients. The API 
 will default to "true" if there is not an exact match.
 </p>
 </div>

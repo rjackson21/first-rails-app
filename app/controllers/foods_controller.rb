@@ -28,22 +28,18 @@ def index
     #this is a local variable because there is no "update" view,
     #we are not using this food variable outside of this method
     food.update(food_params)
-  
-    flash[:notice] = "You've successfully edited #{food.name}"
-  
-    redirect_to root_path
+    redirect_to root_path, notice: "Successfully Edited #{food.name.capitalize}"
   end
 
   def destroy
     food = Food.find(params[:id])
     #again going with local variable for same reason above
     food.destroy
- 
-    redirect_to root_path, notice: "You've deleted #{food.name}"
+    redirect_to root_path, notice: "Deleted #{food.name}"
   end  
   private
   
   def food_params
-    params.require(:food).permit(:name, :calories, :is_vegan)
+    params.require(:food).permit(:name, :is_vegan)
   end
 end
