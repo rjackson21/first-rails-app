@@ -5,7 +5,7 @@ class CreateFriends < ActiveRecord::Migration[5.0]
       t.integer :age
       t.integer :years_of_friendship
 
-      t.timestamps
+      t.datetime
     end
   end
 end
